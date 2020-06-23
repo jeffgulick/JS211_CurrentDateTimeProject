@@ -37,6 +37,25 @@ console.log(typeof newInt)
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
+const checkDataType = (input) => {
+  if (typeof input === 'number') {
+    console.log('its a number');
+  }else if(typeof input === 'string'){
+    console.log('its a string');
+  }else if(typeof input === 'boolean'){
+    console.log('its boolean');
+  }else if(typeof input === 'object'){
+    console.log('its Null');
+  }else if(typeof input === 'undefined'){
+    console.log('its undefined');
+  }else if(typeof input === 'nan'){
+    console.log('its NaN');
+  }
+  return input;
+}
+let a
+let typeInput = checkDataType(null);
+console.log(typeof typeInput);
   // * Boolean
   // * Null
   // * Undefined
