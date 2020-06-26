@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="main.js"></script>
+
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -12,20 +13,22 @@
     <button onclick="displayDate()">Click Me</button>
     <hr/>
     
-    <label for="convert-one">Convert Number to a String</label><br>
+    <!-- <label for="convert-one">Convert Number to a String</label><br>
     <input type="text" id="numToString"><br>
-    <button id="buttonString" onclick="numberToString()">Submit</button><br>
-    <p id="numToStringResult"></p>
+    <button id="buttonString" onclick="getString()">Submit</button><br>
+    <p id="numToStringResult"></p> -->
 
     <label for="convert-one">Convert String to Number</label><br>
     <input type="text" id="stringToNum"><br>
-    <button id="buttonNum" onclick="">Submit</button><br>
+    <button id="buttonNum" onclick="getString()">Submit</button>
     <p id="StringToNumResult">answer</p>
 
-    <label for="convert-one">Check for data type</label><br>
-    <input type="text" id="numToString"><br>
-    <button id="buttonString" onclick="">Submit</button><br>
-    <p id="numToStringResult">answer</p>
+    <label for="adding">Add Two Numbers</label><br>
+    <input type="text" id="addOne">
+    <span> +</span>
+    <input type="text" id="addTwo"><span> =</span> 
+    <button id="addTwo" onclick="numGetAdd()">Submit</button>
+    <p id="addResult">answer</p>
 
 
   </body>

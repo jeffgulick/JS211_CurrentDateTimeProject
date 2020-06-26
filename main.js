@@ -20,58 +20,66 @@ const numberToString = (number) => {
   return number.toString();
   }
 }
-console.log(numberToString(2))
 
 //********** converts a string to a number*************
+//getting value from html input
+const getString = () => {
+  const stringToChange = document.getElementById('stringToNum').value;
+  console.log(stringToChange);
+  let answer = stringToInt(stringToChange);
+//writing number value to html element
+  document.getElementById('StringToNumResult').innerHTML = answer + ' is a ' + typeof answer;
+}
+
+//function changing to number data type
 const stringToInt = (word) => {
-  let change = parseInt(word);
-  return change;
+  //checking if number is whole number
+  if(word % 1 == 0){
+    let change = parseInt(word);
+    return change;  
+  } else {
+    let change = parseFloat(word);
+    return change;
+  }
 }
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
 const checkDataType = (input) => {
   if (typeof input === 'number') {
     console.log('its a number');
-  }else if(typeof input === 'string'){
-    //checking for booleen and null since all html inputs are strings
+  }
+  else if(typeof input === 'string'){
     if(input == "true" || input == "false"){
       console.log('its boolean');
-    } else if (input == "null"){
+    } 
+    else if (input == "null"){
       console.log('its null');
-    }else{
+    } else {
       console.log('its a string')
     }
-  }else if(typeof input === 'boolean'){
-    console.log('its boolean');
-  }else if(typeof input === 'object'){
-    console.log('its Null');
-  }else if(typeof input === 'undefined'){
+  }
+  else if(typeof input === 'undefined'){
     console.log('its undefined');
   }
   return input;
 }
-let a = 'hello'
-let typeInput = checkDataType('true');
+let a 
+let typeInput = checkDataType(2);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//checking for a number in a string and converting to a number
-if(isNaN(a) === false){
-  console.log('theres a number in your string, i will change it to a number')//checking if string is a number or NaN
-  a = stringToInt(a);
-  console.log(typeof a);
-  console.log(a);
-} else{
-  console.log('its a string')
-  console.log(a);
-}
-
-
-
-
-  
-
   
 // program that converts and adds 2 numbers together.
+//function that is grabbing the values from the DOM and then sends to adding function
+const numGetAdd = () => {
+  //getting both values from the DOM
+  x = document.getElementById('addOne').value;
+  y = document.getElementById('addTwo').value;
+  console.log(x)
+  let result = adding(x, y);
+  console.log(result);
+  //writing results back to the DOM
+  document.getElementById('addResult').innerHTML = result + '' + '   data type:  ' + typeof result;
+}
+//function that checks if NaN then has strings converted to numbers and adds together
 const adding = (num1, num2) => {
   //checking if input is number in a string
   if(isNaN(num1) === false && isNaN(num2) === false){
@@ -83,9 +91,8 @@ const adding = (num1, num2) => {
   } else {
     return num1 + num2;
   }
-
 }
- console.log(adding('2', '2'))
+ console.log(adding('2.5', '2.5'))
 
 //program that runs only when 2 things are true.
 const bothTrue = (thing1, thing2) => {
