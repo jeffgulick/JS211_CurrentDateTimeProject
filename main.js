@@ -44,6 +44,18 @@ const stringToInt = (word) => {
 }
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
+const dataTypeFunc = () => { 
+ let x = document.getElementById('data-type-input').value;
+ let y 
+ let z 
+  //if its a number
+  if(isNaN(x) === false){
+    y = stringToInt(x);
+  }
+
+  document.getElementById('dataTypeResult').innerHTML = y + '' + '   data type:  ' + typeof y;
+}
+dataTypeFunc('5')
 const checkDataType = (input) => {
   if (typeof input === 'number') {
     console.log('its a number');
