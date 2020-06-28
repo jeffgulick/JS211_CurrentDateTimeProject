@@ -12,7 +12,7 @@ const displayDate = () => {
 
   document.getElementById("display-element").innerHTML = currentDate;
 }
-// ***converts a number to a string***************
+// **********converts a number to a string***************
 const numberToString = (number) => {
   if(typeof number === 'string'){
     console.log('already a string')
@@ -43,7 +43,7 @@ const stringToInt = (word) => {
   }
 }
 
-//function that gets value from DOM and then returns the data type back into DOM
+//**************function that gets value from DOM and then returns the data type back into DOM
 const getDataType = () => {
   // console.log(checkDataType('true'));
   const getTextValue = document.getElementById('data-type').value;
@@ -53,8 +53,9 @@ const getDataType = () => {
 }
 //function that returns the data type of data passed into it
 const checkDataType = (input) => {
-  
+  //looking for number in html input
   if(isNaN(input) === false){
+    //checks for null or empty value
     if(input.length == 0 || typeof input == 'null'){
       input = 'null';
     }else {
@@ -83,7 +84,7 @@ const checkDataType = (input) => {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
   
-// program that converts and adds 2 numbers together.
+// *********************program that converts and adds 2 numbers together.*********************************
 //function that is grabbing the values from the DOM and then sends to adding function
 const numGetAdd = () => {
   //getting both values from the DOM
@@ -108,7 +109,7 @@ const adding = (num1, num2) => {
     return num1 + num2;
   }
 }
-//program that runs only when 2 things are true.
+//*******************************program that runs only when 2 things are true.
 const bothTrue = (thing1, thing2) => {
   if(thing1 == true && thing2 == true){
     console.log('whats up');
@@ -128,6 +129,14 @@ const oneTrue = (thing1, thing2) => {
 }
 
 // Write a JavaScript program that runs when both things are not true.  
+const bothNotTrue = (thing1, thing2) => {
+  if(thing1 == !true && thing2 == !true){
+    console.log('whats up');
+  } else {
+    console.log('try again');
+  }
+}
+
 
 // ***************************
 //         PART TWO
