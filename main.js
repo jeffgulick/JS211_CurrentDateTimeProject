@@ -43,40 +43,44 @@ const stringToInt = (word) => {
   }
 }
 
-// Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-const dataTypeFunc = () => { 
- let x = document.getElementById('data-type-input').value;
- let y 
- let z 
-  //if its a number
-  if(isNaN(x) === false){
-    y = stringToInt(x);
-  }
-
-  document.getElementById('dataTypeResult').innerHTML = y + '' + '   data type:  ' + typeof y;
+//function that gets value from DOM and then returns the data type back into DOM
+const getDataType = () => {
+  // console.log(checkDataType('true'));
+  const getTextValue = document.getElementById('data-type').value;
+  console.log(getTextValue)
+  console.log(checkDataType(getTextValue))
+  document.getElementById('dataTypeResult').innerHTML = checkDataType(getTextValue)
 }
-dataTypeFunc('5')
+//function that returns the data type of data passed into it
 const checkDataType = (input) => {
-  if (typeof input === 'number') {
-    console.log('its a number');
+  
+  if(isNaN(input) === false){
+    if(input.length == 0 || typeof input == 'null'){
+      input = 'null';
+    }else {
+      console.log(input)
+      const x = stringToInt(input);
+      input = typeof x;
+    }
   }
   else if(typeof input === 'string'){
     if(input == "true" || input == "false"){
-      console.log('its boolean');
+      input = 'boolean';
     } 
-    else if (input == "null"){
-      console.log('its null');
-    } else {
-      console.log('its a string')
-    }
+    else if (input == "null" || typeof input === 'null'){
+      input = 'null';
+    } 
+    else if (typeof input === 'undefined'|| input === 'undefined'){
+      input = 'undefined'
+    }else {
+      input = 'string';
+     }
   }
   else if(typeof input === 'undefined'){
-    console.log('its undefined');
+    input = 'undefined'
   }
   return input;
 }
-let a 
-let typeInput = checkDataType(2);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
   
 // program that converts and adds 2 numbers together.
@@ -104,8 +108,6 @@ const adding = (num1, num2) => {
     return num1 + num2;
   }
 }
- console.log(adding('2.5', '2.5'))
-
 //program that runs only when 2 things are true.
 const bothTrue = (thing1, thing2) => {
   if(thing1 == true && thing2 == true){
