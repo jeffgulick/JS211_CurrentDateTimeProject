@@ -12,28 +12,50 @@
     <div id="display-element"></div>
     <button onclick="displayDate()">Click Me</button>
     <hr/>
-    
-    <!-- <label for="convert-one">Convert Number to a String</label><br>
-    <input type="text" id="numToString"><br>
-    <button id="buttonString" onclick="getString()">Submit</button><br>
-    <p id="numToStringResult"></p> -->
+
+    <label for="convert-one">Convert a Number to a String</label><br>
+    <input type="text" id="intToString">
+    <button id="buttonNum" onclick="getNumber()">Submit</button>
+    <p id="numberToStringResult"></p>    
 
     <label for="convert-one">Convert String to Number</label><br>
-    <input type="text" id="stringToNum"><br>
+    <input type="text" id="stringToNum">
     <button id="buttonNum" onclick="getString()">Submit</button>
-    <p id="StringToNumResult">answer</p>
+    <p id="StringToNumResult"></p>
 
     <label for="adding">Add Two Numbers</label><br>
     <input type="text" id="addOne">
     <span> +</span>
     <input type="text" id="addTwo"><span> =</span> 
     <button id="addTwo" onclick="numGetAdd()">Submit</button>
-    <p id="addResult">answer</p>
+    <p id="addResult"></p>
 
     <label for="data-type">Please enter text or number and recieve the data type below. Or put nothing and hit button:</label><br>
     <input type="text" id="data-type" placeholder="Enter text or number here">
     <button id="dataType" onclick="getDataType()">Submit</button>
-    <p id="dataTypeResult">answer</p>
+    <p id="dataTypeResult"></p>
+
+    <label for="adding-if">Add Two Numbers if Both are floats (is not a whole #)</label><br>
+    <input type="text" id="One">
+    <span> +</span>
+    <input type="text" id="Two"><span> =</span> 
+    <button id="addIfBothTrue" onclick="bothTrue()">Submit</button>
+    <p id="resultBoth"></p>
+
+    <label for="adding-if-one">Add Two Numbers if at least one is a float (is not a whole #)</label><br>
+    <input type="text" id="oneIfOne">
+    <span> +</span>
+    <input type="text" id="twoIfOne"><span> =</span> 
+    <button id="addIfOneTrue" onclick="oneTrue()">Submit</button>
+    <p id="resultOne"></p>
+
+    <label for="adding-if-!both">Add Two Numbers if both are NOT floats</label><br>
+    <input type="text" id="oneIfNot">
+    <span> +</span>
+    <input type="text" id="twoIfNot"><span> =</span> 
+    <button id="addIfBothFalse" onclick="bothFalse()">Submit</button>
+    <p id="resultBothFalse"></p>
+
 
   </body>
 </html>

@@ -13,6 +13,14 @@ const displayDate = () => {
   document.getElementById("display-element").innerHTML = currentDate;
 }
 // **********converts a number to a string***************
+const getNumber = () => {
+  const string = document.getElementById('intToString').value;
+  let number = stringToInt(string);
+  let answer = numberToString(number)
+
+  document.getElementById('numberToStringResult').innerHTML = answer + ' is a ' + typeof answer;
+}
+
 const numberToString = (number) => {
   if(typeof number === 'string'){
     console.log('already a string')
@@ -110,30 +118,44 @@ const adding = (num1, num2) => {
   }
 }
 //*******************************program that runs only when 2 things are true.
-const bothTrue = (thing1, thing2) => {
-  if(thing1 == true && thing2 == true){
-    console.log('whats up');
+//func that runs when both inputs are floats
+const bothTrue = () => {
+  thing1 = document.getElementById('One').value;
+  thing2 = document.getElementById('Two').value;
+//checking that both numbers are floats
+  if(thing1 % 1 != 0 && thing2 % 1 != 0){
+    result = adding(thing1, thing2);
+    document.getElementById('resultBoth').innerHTML = result;
   } else {
-    console.log('try again');
+    document.getElementById('resultBoth').innerHTML = 'Both numbers are not floats!!';
   }
 }
 
 
 // program that runs when 1 of 2 things are true.
-const oneTrue = (thing1, thing2) => {
-  if(thing1 == true || thing2 == true){
-    console.log('whats up');
+const oneTrue = () => {
+  thing1 = document.getElementById('oneIfOne').value;
+  thing2 = document.getElementById('twoIfOne').value;
+//checking that both numbers are floats
+  if(thing1 % 1 != 0 || thing2 % 1 != 0){
+    result = adding(thing1, thing2);
+    document.getElementById('resultOne').innerHTML = result;
   } else {
-    console.log('try again');
+    document.getElementById('resultOne').innerHTML = 'At least one input must be a FLOAT!! ';
   }
 }
 
+
 // Write a JavaScript program that runs when both things are not true.  
-const bothNotTrue = (thing1, thing2) => {
-  if(thing1 == !true && thing2 == !true){
-    console.log('whats up');
+const bothFalse = () => {
+  thing1 = document.getElementById('oneIfNot').value;
+  thing2 = document.getElementById('twoIfNot').value;
+//checking that both numbers are floats
+  if(thing1 % 1 == 0 && thing2 % 1 == 0){
+    result = adding(thing1, thing2);
+    document.getElementById('resultBothFalse').innerHTML = result;
   } else {
-    console.log('try again');
+    document.getElementById('resultBothFalse').innerHTML = 'BOTH inputs must be WHOLE Numbers!!!';
   }
 }
 
